@@ -16,12 +16,7 @@ namespace RefactortingTennisGame2
             string score = "";
             if (p1.Point == p2.Point && p1.Point < 4)
             {
-                if (p1.Point == 0)
-                    score = "Love";
-                if (p1.Point == 1)
-                    score = "Fifteen";
-                if (p1.Point == 2)
-                    score = "Thirty";
+                score = ScoreRule.GetResultByPoint(p1.Point);
                 score += "-All";
             }
 
@@ -30,53 +25,29 @@ namespace RefactortingTennisGame2
 
             if (p1.Point > 0 && p2.Point == 0)
             {
-                if (p1.Point == 1)
-                    p1.Result = "Fifteen";
-                if (p1.Point == 2)
-                    p1.Result = "Thirty";
-                if (p1.Point == 3)
-                    p1.Result = "Forty";
-
-                p2.Result = "Love";
+                p1.Result = ScoreRule.GetResultByPoint(p1.Point);
+                p2.Result = ScoreRule.GetResultByPoint(p2.Point);
                 score = p1.Result + "-" + p2.Result;
             }
 
             if (p2.Point > 0 && p1.Point == 0)
             {
-                if (p2.Point == 1)
-                    p2.Result = "Fifteen";
-                if (p2.Point == 2)
-                    p2.Result = "Thirty";
-                if (p2.Point == 3)
-                    p2.Result = "Forty";
-
-                p1.Result = "Love";
+                p1.Result = ScoreRule.GetResultByPoint(p1.Point);
+                p2.Result = ScoreRule.GetResultByPoint(p2.Point);
                 score = p1.Result + "-" + p2.Result;
             }
 
             if (p1.Point > p2.Point && p1.Point < 4)
             {
-                if (p1.Point == 2)
-                    p1.Result = "Thirty";
-                if (p1.Point == 3)
-                    p1.Result = "Forty";
-                if (p2.Point == 1)
-                    p2.Result = "Fifteen";
-                if (p2.Point == 2)
-                    p2.Result = "Thirty";
+                p1.Result = ScoreRule.GetResultByPoint(p1.Point);
+                p2.Result = ScoreRule.GetResultByPoint(p2.Point);
                 score = p1.Result + "-" + p2.Result;
             }
 
             if (p2.Point > p1.Point && p2.Point < 4)
             {
-                if (p2.Point == 2)
-                    p2.Result = "Thirty";
-                if (p2.Point == 3)
-                    p2.Result = "Forty";
-                if (p1.Point == 1)
-                    p1.Result = "Fifteen";
-                if (p1.Point == 2)
-                    p1.Result = "Thirty";
+                p1.Result = ScoreRule.GetResultByPoint(p1.Point);
+                p2.Result = ScoreRule.GetResultByPoint(p2.Point);
                 score = p1.Result + "-" + p2.Result;
             }
 
