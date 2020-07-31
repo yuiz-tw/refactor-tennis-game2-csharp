@@ -53,7 +53,7 @@ namespace RefactoringTennisGameTest
         [MemberData(nameof(Scores))]
         public void CheckAllScoresTennisGame2(int player1Score, int player2Score, string expectedScore)
         {
-            TennisGameImpl game = new TennisGameImpl("player1", "player2");
+            TennisGame game = new TennisGame("player1", "player2");
             CheckAllScores(player1Score, player2Score, expectedScore, game);
         }
 
