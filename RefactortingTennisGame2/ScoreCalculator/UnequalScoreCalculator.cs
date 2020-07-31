@@ -15,7 +15,7 @@ namespace RefactortingTennisGame2.ScoreCalculator
 
         public string GetScore()
         {
-            if (frontRunner.Point >= 4 && follower.Point >= 0 && (frontRunner.Point - follower.Point) >= 2)
+            if (IsFrontRunnerWin())
             {
                 return "Win for " + frontRunner.Name;
             }
@@ -31,6 +31,11 @@ namespace RefactortingTennisGame2.ScoreCalculator
             }
 
             return null;
+        }
+
+        private bool IsFrontRunnerWin()
+        {
+            return frontRunner.Point >= 4 && follower.Point >= 0 && (frontRunner.Point - follower.Point) >= 2;
         }
 
         private string CalculateScoreByPointsOfEachPlayer()
