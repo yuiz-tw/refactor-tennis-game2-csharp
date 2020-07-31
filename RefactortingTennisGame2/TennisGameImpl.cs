@@ -107,7 +107,7 @@ namespace RefactortingTennisGame2
         {
             for (int i = 0; i < number; i++)
             {
-                P1Score();
+                p1.ScorePlusOne();
             }
         }
 
@@ -115,26 +115,16 @@ namespace RefactortingTennisGame2
         {
             for (int i = 0; i < number; i++)
             {
-                P2Score();
+                p2.ScorePlusOne();
             }
-        }
-
-        public void P1Score()
-        {
-            p1.Point++;
-        }
-
-        public void P2Score()
-        {
-            p2.Point++;
         }
 
         public void WonPoint(string player)
         {
             if (player == "player1")
-                P1Score();
+                p1.ScorePlusOne();
             else
-                P2Score();
+                p2.ScorePlusOne();
         }
     }
 }
