@@ -25,30 +25,22 @@ namespace RefactortingTennisGame2
 
             if (p1.Point > 0 && p2.Point == 0)
             {
-                p1.Result = ScoreRule.GetResultByPoint(p1.Point);
-                p2.Result = ScoreRule.GetResultByPoint(p2.Point);
-                score = p1.Result + "-" + p2.Result;
+                score = CalculateScoreByPointsOfEachPlayer();
             }
 
             if (p2.Point > 0 && p1.Point == 0)
             {
-                p1.Result = ScoreRule.GetResultByPoint(p1.Point);
-                p2.Result = ScoreRule.GetResultByPoint(p2.Point);
-                score = p1.Result + "-" + p2.Result;
+                score = CalculateScoreByPointsOfEachPlayer();
             }
 
             if (p1.Point > p2.Point && p1.Point < 4)
             {
-                p1.Result = ScoreRule.GetResultByPoint(p1.Point);
-                p2.Result = ScoreRule.GetResultByPoint(p2.Point);
-                score = p1.Result + "-" + p2.Result;
+                score = CalculateScoreByPointsOfEachPlayer();
             }
 
             if (p2.Point > p1.Point && p2.Point < 4)
             {
-                p1.Result = ScoreRule.GetResultByPoint(p1.Point);
-                p2.Result = ScoreRule.GetResultByPoint(p2.Point);
-                score = p1.Result + "-" + p2.Result;
+                score = CalculateScoreByPointsOfEachPlayer();
             }
 
             if (p1.Point > p2.Point && p2.Point >= 3)
@@ -72,6 +64,13 @@ namespace RefactortingTennisGame2
             }
 
             return score;
+        }
+
+        private string CalculateScoreByPointsOfEachPlayer()
+        {
+            p1.Result = ScoreRule.GetResultByPoint(p1.Point);
+            p2.Result = ScoreRule.GetResultByPoint(p2.Point);
+            return p1.Result + "-" + p2.Result;
         }
 
         public void WonPoint(string player)
