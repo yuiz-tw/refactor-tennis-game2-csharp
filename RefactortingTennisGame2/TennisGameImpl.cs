@@ -7,8 +7,8 @@ namespace RefactortingTennisGame2
 
         public TennisGame(string player1Name, string player2Name)
         {
-            this.p1 = new Player(player1Name);
-            this.p2 = new Player(player2Name);
+            this.p1 = new Player(player1Name, DisplayOrder.First);
+            this.p2 = new Player(player2Name, DisplayOrder.Second);
         }
 
         public string GetScore()
