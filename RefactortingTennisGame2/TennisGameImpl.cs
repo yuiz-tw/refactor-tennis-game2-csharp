@@ -103,22 +103,6 @@ namespace RefactortingTennisGame2
             return score;
         }
 
-        public void SetP1Score(int number)
-        {
-            for (int i = 0; i < number; i++)
-            {
-                p1.ScorePlusOne();
-            }
-        }
-
-        public void SetP2Score(int number)
-        {
-            for (int i = 0; i < number; i++)
-            {
-                p2.ScorePlusOne();
-            }
-        }
-
         public void WonPoint(string player)
         {
             if (player == "player1")
