@@ -2,20 +2,18 @@
 {
     public class Player
     {
-        public string Name { get; set; }
+        public string Name { get; }
         public int Point { get; private set; }
-        public string Result { get; set; }
-        public DisplayOrder DisplayOrder { get; private set; }
+        public DisplayOrder DisplayOrder { get; }
 
         public Player(string name, DisplayOrder displayOrder)
         {
             Name = name;
-            Point = 0;
-            Result = "";
             DisplayOrder = displayOrder;
+            Point = 0;
         }
 
-        public void ScorePlusOne()
+        public void PointPlusOne()
         {
             Point++;
         }

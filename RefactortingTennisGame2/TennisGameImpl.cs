@@ -34,9 +34,9 @@ namespace RefactortingTennisGame2
         public void WonPoint(string player)
         {
             if (player == "player1")
-                p1.ScorePlusOne();
+                p1.PointPlusOne();
             else
-                p2.ScorePlusOne();
+                p2.PointPlusOne();
         }
     }
 }
