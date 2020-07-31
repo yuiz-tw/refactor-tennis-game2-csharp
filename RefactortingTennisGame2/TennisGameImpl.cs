@@ -1,3 +1,6 @@
+using RefactortingTennisGame2.Constants;
+using RefactortingTennisGame2.ScoreCalculator;
+
 namespace RefactortingTennisGame2
 {
     public class TennisGame : ITennisGame

@@ -1,4 +1,4 @@
-﻿namespace RefactortingTennisGame2
+﻿namespace RefactortingTennisGame2.ScoreCalculator
 {
     interface IScoreCalculator
     {

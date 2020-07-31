@@ -1,4 +1,4 @@
-﻿namespace RefactortingTennisGame2
+﻿namespace RefactortingTennisGame2.Constants
 {
     public enum DisplayOrder
     {

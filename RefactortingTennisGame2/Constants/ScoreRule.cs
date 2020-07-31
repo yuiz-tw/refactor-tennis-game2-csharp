@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 
-namespace RefactortingTennisGame2
+namespace RefactortingTennisGame2.Constants
 {
     public static class ScoreRule
     {

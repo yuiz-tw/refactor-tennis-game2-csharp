@@ -1,4 +1,6 @@
-﻿namespace RefactortingTennisGame2
+﻿using RefactortingTennisGame2.Constants;
+
+namespace RefactortingTennisGame2.ScoreCalculator
 {
     class UnequalScoreCalculator : IScoreCalculator
     {
