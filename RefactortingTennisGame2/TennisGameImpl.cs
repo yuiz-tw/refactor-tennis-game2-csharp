@@ -13,60 +13,22 @@ namespace RefactortingTennisGame2
 
         public string GetScore()
         {
-            string score = "";
             if (p1.Point == p2.Point)
             {
-                if (p1.Point < 4)
-                {
-                    score = ScoreRule.GetResultByPoint(p1.Point);
-                    score += "-All";
-                }
-                if (p1.Point >= 3)
-                {
-                    score = "Deuce";
-                }
+                return new EqualScoreCalculator(p1.Point).GetScore();
             }
 
             if (p1.Point > p2.Point)
             {
-                if (p1.Point < 4)
-                {
-                    score = CalculateScoreByPointsOfEachPlayer();
-                }
-                if (p2.Point >= 3)
-                {
-                    score = "Advantage player1";
-                }
-                if (p1.Point >= 4 && p2.Point >= 0 && (p1.Point - p2.Point) >= 2)
-                {
-                    score = "Win for player1";
-                }
+                return new UnequalScoreCalculator(p1, p2).GetScore();
             }
 
             if (p2.Point > p1.Point)
-            {
-                if (p2.Point < 4)
-                {
-                    score = CalculateScoreByPointsOfEachPlayer();
-                }
-                if (p1.Point >= 3)
-                {
-                    score = "Advantage player2";
-                }
-                if (p2.Point >= 4 && p1.Point >= 0 && (p2.Point - p1.Point) >= 2)
-                {
-                    score = "Win for player2";
-                }
+            {                
+                return new UnequalScoreCalculator(p2, p1).GetScore();
             }
 
-            return score;
-        }
-
-        private string CalculateScoreByPointsOfEachPlayer()
-        {
-            p1.Result = ScoreRule.GetResultByPoint(p1.Point);
-            p2.Result = ScoreRule.GetResultByPoint(p2.Point);
-            return p1.Result + "-" + p2.Result;
+            return null;
         }
 
         public void WonPoint(string player)
