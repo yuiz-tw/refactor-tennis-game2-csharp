@@ -14,53 +14,49 @@ namespace RefactortingTennisGame2
         public string GetScore()
         {
             string score = "";
-            if (p1.Point == p2.Point && p1.Point < 4)
+            if (p1.Point == p2.Point)
             {
-                score = ScoreRule.GetResultByPoint(p1.Point);
-                score += "-All";
+                if (p1.Point < 4)
+                {
+                    score = ScoreRule.GetResultByPoint(p1.Point);
+                    score += "-All";
+                }
+                if (p1.Point >= 3)
+                {
+                    score = "Deuce";
+                }
             }
 
-            if (p1.Point == p2.Point && p1.Point >= 3)
-                score = "Deuce";
-
-            if (p1.Point > 0 && p2.Point == 0)
+            if (p1.Point > p2.Point)
             {
-                score = CalculateScoreByPointsOfEachPlayer();
+                if (p1.Point < 4)
+                {
+                    score = CalculateScoreByPointsOfEachPlayer();
+                }
+                if (p2.Point >= 3)
+                {
+                    score = "Advantage player1";
+                }
+                if (p1.Point >= 4 && p2.Point >= 0 && (p1.Point - p2.Point) >= 2)
+                {
+                    score = "Win for player1";
+                }
             }
 
-            if (p2.Point > 0 && p1.Point == 0)
+            if (p2.Point > p1.Point)
             {
-                score = CalculateScoreByPointsOfEachPlayer();
-            }
-
-            if (p1.Point > p2.Point && p1.Point < 4)
-            {
-                score = CalculateScoreByPointsOfEachPlayer();
-            }
-
-            if (p2.Point > p1.Point && p2.Point < 4)
-            {
-                score = CalculateScoreByPointsOfEachPlayer();
-            }
-
-            if (p1.Point > p2.Point && p2.Point >= 3)
-            {
-                score = "Advantage player1";
-            }
-
-            if (p2.Point > p1.Point && p1.Point >= 3)
-            {
-                score = "Advantage player2";
-            }
-
-            if (p1.Point >= 4 && p2.Point >= 0 && (p1.Point - p2.Point) >= 2)
-            {
-                score = "Win for player1";
-            }
-
-            if (p2.Point >= 4 && p1.Point >= 0 && (p2.Point - p1.Point) >= 2)
-            {
-                score = "Win for player2";
+                if (p2.Point < 4)
+                {
+                    score = CalculateScoreByPointsOfEachPlayer();
+                }
+                if (p1.Point >= 3)
+                {
+                    score = "Advantage player2";
+                }
+                if (p2.Point >= 4 && p1.Point >= 0 && (p2.Point - p1.Point) >= 2)
+                {
+                    score = "Win for player2";
+                }
             }
 
             return score;
